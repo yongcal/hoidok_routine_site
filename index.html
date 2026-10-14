@@ -1,102 +1,687 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HOIDOK</title>
+
+  <title>HOIDOK | 회독 시리즈</title>
+
+  <meta name="description"
+        content="회독 시리즈와 함께 합격 가즈아! JLPT, HSK, TOEIC 학습과 공부 습관을 위한 앱.">
+
   <style>
+    :root {
+      --primary: #499EAF;
+      --primary-dark: #287F90;
+      --black: #181818;
+      --text: #202020;
+      --muted: #666666;
+      --background: #ffffff;
+      --light: #f6f8f9;
+      --border: #e8ebed;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #ffffff;
-      color: #111111;
-      text-align: center;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Noto Sans KR",
+        "Apple SD Gothic Neo",
+        Arial,
+        sans-serif;
+      color: var(--text);
+      background: var(--background);
+      line-height: 1.6;
     }
 
-    .wrap {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 60px 24px;
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
-    .hero-image {
-      width: 100%;
-      max-width: 800px;
-      border-radius: 18px;
-      margin-bottom: 45px;
+    /* HEADER */
+
+    header {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
-    h1 {
-      font-size: 52px;
-      margin: 0 0 12px;
-      letter-spacing: -1px;
+    .header-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .tagline {
+    .logo {
       font-size: 26px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      color: var(--black);
+    }
+
+    nav {
+      display: flex;
+      gap: 32px;
+      font-size: 14px;
       font-weight: 600;
-      margin-bottom: 24px;
     }
 
-    .description {
-      font-size: 18px;
-      line-height: 1.7;
-      color: #555;
-      max-width: 650px;
-      margin: 0 auto 50px;
+    nav a:hover {
+      color: var(--primary);
     }
 
-    h2 {
-      font-size: 28px;
-      margin-bottom: 18px;
+    /* HERO */
+
+    .hero {
+      background: var(--black);
+      color: white;
+      text-align: center;
+      padding: 115px 24px 125px;
     }
 
-    .apps {
-      font-size: 18px;
-      line-height: 2;
+    .hero h1 {
+      font-size: clamp(64px, 10vw, 110px);
+      font-weight: 900;
+      letter-spacing: -4px;
+      margin: 0;
+      line-height: 1.1;
+    }
+
+    .hero .english {
+      font-size: 22px;
+      letter-spacing: 2px;
+      color: #bbbbbb;
+      margin-top: 20px;
+    }
+
+    .hero .message {
+      margin-top: 65px;
+      font-size: 27px;
+      font-weight: 700;
+    }
+
+    .hero .highlight {
+      font-size: clamp(34px, 6vw, 55px);
+      font-weight: 900;
+      color: var(--primary);
+      margin-top: 8px;
+    }
+
+    .hero .description {
+      color: #aaaaaa;
+      font-size: 16px;
+      margin-top: 35px;
+    }
+
+    .hero-button {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      border-radius: 8px;
+      padding: 13px 35px;
+      margin-top: 35px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    .hero-button:hover {
+      background: var(--primary-dark);
+    }
+
+    /* COMMON SECTION */
+
+    section {
+      padding: 100px 24px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
       margin-bottom: 55px;
     }
 
-    footer {
-      border-top: 1px solid #ddd;
-      padding-top: 28px;
-      font-size: 14px;
-      color: #777;
+    .section-title .label {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--primary-dark);
     }
 
-    footer a {
+    .section-title h2 {
+      font-size: 38px;
+      font-weight: 900;
+      margin: 10px 0;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* APP GRID */
+
+    .apps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .app-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 35px 22px 30px;
+      text-align: center;
+      transition: 0.25s;
+    }
+
+    .app-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 35px rgba(0,0,0,0.08);
+    }
+
+    .app-icon {
+      width: 150px;
+      height: 150px;
+      border-radius: 22%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 27px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .app-card h3 {
+      font-size: 23px;
+      margin: 0 0 12px;
+      font-weight: 800;
+    }
+
+    .app-card p {
+      color: var(--muted);
+      font-size: 14px;
+      min-height: 50px;
+      margin-bottom: 26px;
+    }
+
+    .store-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .store-button {
+      background: var(--black);
+      color: white;
+      display: block;
+      border-radius: 8px;
+      padding: 12px 10px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    .store-button:hover {
+      background: var(--primary-dark);
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: var(--light);
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: 38px;
+      font-weight: 900;
+      margin-bottom: 25px;
+    }
+
+    .about p {
+      font-size: 17px;
       color: #555;
-      text-decoration: none;
-      margin: 0 8px;
+      max-width: 650px;
+      margin: auto;
+      line-height: 2;
+    }
+
+    .about .company {
+      margin-top: 38px;
+      font-size: 14px;
+      letter-spacing: 2px;
+      font-weight: 800;
+      color: var(--primary-dark);
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--black);
+      color: white;
+      padding: 55px 24px 30px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .footer-brand {
+      font-size: 27px;
+      font-weight: 900;
+    }
+
+    .footer-company {
+      color: #aaaaaa;
+      font-size: 13px;
+      margin-top: 5px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+      font-size: 14px;
+      color: #cccccc;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+
+    .copyright {
+      border-top: 1px solid #333;
+      margin-top: 45px;
+      padding-top: 25px;
+      color: #888;
+      font-size: 12px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 1000px) {
+      .apps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .header-inner {
+        padding: 15px 20px;
+      }
+
+      .logo {
+        font-size: 22px;
+      }
+
+      nav {
+        gap: 15px;
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 85px 20px 100px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero .english {
+        font-size: 16px;
+      }
+
+      .hero .message {
+        font-size: 20px;
+        margin-top: 45px;
+      }
+
+      .hero .description {
+        font-size: 14px;
+      }
+
+      section {
+        padding: 70px 18px;
+      }
+
+      .section-title h2 {
+        font-size: 30px;
+      }
+
+      .apps {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        max-width: 380px;
+        margin: auto;
+      }
+
+      .app-card {
+        padding: 30px 24px;
+      }
+
+      .app-icon {
+        width: 140px;
+        height: 140px;
+      }
+
+      .about h2 {
+        font-size: 30px;
+      }
+
+      .about p {
+        font-size: 15px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
 
-    <img src="image.png" alt="HOIDOK Routine" class="hero-image">
+  <!-- HEADER -->
+
+  <header>
+    <div class="header-inner">
+
+      <a href="#" class="logo">HOIDOK</a>
+
+      <nav>
+        <a href="#apps">앱 소개</a>
+        <a href="#about">회사 소개</a>
+        <a href="#footer">고객지원</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+
+  <div class="hero">
 
     <h1>HOIDOK</h1>
-    <div class="tagline">Learn. Repeat. Achieve.</div>
+
+    <div class="english">
+      Learn. Repeat. Achieve.
+    </div>
+
+    <div class="message">
+      회독 시리즈와 함께
+    </div>
+
+    <div class="highlight">
+      합격 가즈아!!!!!!!
+    </div>
 
     <div class="description">
-      HOIDOK creates simple tools for language learning and building better habits.
+      반복 학습으로 더 멀리, 더 높이.<br>
+      당신의 목표를 응원합니다.
     </div>
 
-    <h2>Our Apps</h2>
-
-    <div class="apps">
-      HOIDOK JLPT<br>
-      HOIDOK HSK<br>
-      HOIDOK TOEIC<br>
-      HOIDOK Routine
-    </div>
-
-    <footer>
-      © Yongcal Company
-    </footer>
+    <a href="#apps" class="hero-button">
+      회독 시리즈 만나보기 ↓
+    </a>
 
   </div>
+
+
+  <!-- APPS -->
+
+  <section id="apps">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <div class="label">OUR APPS</div>
+
+        <h2>회독 시리즈</h2>
+
+        <p>
+          당신의 목표를 위한 학습 파트너
+        </p>
+
+      </div>
+
+
+      <div class="apps">
+
+        <!-- JLPT -->
+
+        <div class="app-card">
+
+          <img
+            src="jlpt.png"
+            alt="회독JLPT 앱 아이콘"
+            class="app-icon"
+          >
+
+          <h3>회독JLPT</h3>
+
+          <p>
+            일본어 능력시험 JLPT<br>
+            반복 학습의 시작
+          </p>
+
+          <div class="store-buttons">
+
+            <a class="store-button"
+               href="https://apps.apple.com/kr/app/id1257680916"
+               target="_blank"
+               rel="noopener noreferrer">
+               App Store
+            </a>
+
+            <a class="store-button"
+               href="https://play.google.com/store/apps/details?id=com.yongcalcompany.jlptkanji"
+               target="_blank"
+               rel="noopener noreferrer">
+              Google Play
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- HSK -->
+
+        <div class="app-card">
+
+          <img
+            src="hsk.png"
+            alt="회독HSK 앱 아이콘"
+            class="app-icon"
+          >
+
+          <h3>회독HSK</h3>
+
+          <p>
+            중국어 능력시험 HSK<br>
+            체계적인 단어 학습
+          </p>
+
+          <div class="store-buttons">
+
+            <a class="store-button"
+               href="https://apps.apple.com/kr/app/id1460388012"
+               target="_blank"
+               rel="noopener noreferrer">
+               App Store
+            </a>
+
+            <a class="store-button"
+               href="https://play.google.com/store/apps/details?id=com.yongcalcompany.hskkanji"
+               target="_blank"
+               rel="noopener noreferrer">
+              Google Play
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- TOEIC -->
+
+        <div class="app-card">
+
+          <img
+            src="toeic.png"
+            alt="회독TOEIC 앱 아이콘"
+            class="app-icon"
+          >
+
+          <h3>회독TOEIC</h3>
+
+          <p>
+            TOEIC 고득점을 위한<br>
+            필수 영어 단어 학습
+          </p>
+
+          <div class="store-buttons">
+
+            <a class="store-button"
+               href="https://apps.apple.com/kr/app/id1488921928"
+               target="_blank"
+               rel="noopener noreferrer">
+               App Store
+            </a>
+
+            <a class="store-button"
+               href="https://play.google.com/store/apps/details?id=com.yongcalcompany.ToeicWords"
+               target="_blank"
+               rel="noopener noreferrer">
+              Google Play
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- ROUTINE -->
+
+        <div class="app-card">
+
+          <img
+            src="routine.png"
+            alt="회독루틴 앱 아이콘"
+            class="app-icon"
+          >
+
+          <h3>회독루틴</h3>
+
+          <p>
+            매일의 작은 반복이<br>
+            큰 변화를 만듭니다
+          </p>
+
+          <div class="store-buttons">
+
+            <a class="store-button"
+               href="https://apps.apple.com/kr/app/id6790443629"
+               target="_blank"
+               rel="noopener noreferrer">
+               App Store
+            </a>
+
+            <a class="store-button"
+               href="https://play.google.com/store/apps/details?id=com.yongcalcompany.hoidokroutine"
+               target="_blank"
+               rel="noopener noreferrer">
+              Google Play
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section class="about" id="about">
+
+    <div class="container">
+
+      <div class="section-title">
+        <div class="label">ABOUT US</div>
+        <h2>YONGCAL COMPANY</h2>
+      </div>
+
+      <p>
+        우리는 반복 학습의 힘을 믿습니다.
+        <br><br>
+        더 효율적으로 배우고,
+        더 꾸준히 학습할 수 있도록.
+        <br>
+        누구나 자신의 목표에 도달할 수 있도록.
+        <br><br>
+        YONGCAL COMPANY는
+        학습을 위한 작은 도구들을 만듭니다.
+      </p>
+
+      <div class="company">
+        LEARN. REPEAT. ACHIEVE.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer id="footer">
+
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        HOIDOK
+      </div>
+
+      <div class="footer-company">
+        YONGCAL COMPANY
+      </div>
+
+      <div class="footer-links">
+        <a href="#apps">회독 시리즈</a>
+        <a href="#about">회사 소개</a>
+      </div>
+
+      <div class="copyright">
+        © 2026 YONGCAL COMPANY. All rights reserved.
+      </div>
+
+    </div>
+
+  </footer>
+
 </body>
 </html>
