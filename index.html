@@ -6,10 +6,13 @@
 
   <title>HOIDOK | 회독 시리즈</title>
 
-  <meta name="description"
-        content="회독 시리즈와 함께 합격 가즈아! JLPT, HSK, TOEIC 학습과 공부 습관을 위한 앱.">
+  <meta
+    name="description"
+    content="회독 시리즈와 함께 합격 가즈아! JLPT, HSK, TOEIC 학습과 공부 습관을 위한 앱."
+  >
 
   <style>
+
     :root {
       --primary: #499EAF;
       --primary-dark: #287F90;
@@ -38,6 +41,7 @@
         "Apple SD Gothic Neo",
         Arial,
         sans-serif;
+
       color: var(--text);
       background: var(--background);
       line-height: 1.6;
@@ -48,7 +52,10 @@
       color: inherit;
     }
 
-    /* HEADER */
+
+    /* =========================
+       HEADER
+    ========================= */
 
     header {
       background: white;
@@ -62,6 +69,7 @@
       max-width: 1200px;
       margin: auto;
       padding: 18px 30px;
+
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -85,96 +93,103 @@
       color: var(--primary);
     }
 
-    /* HERO */
-.hero {
-  background:
-    radial-gradient(
-      ellipse at center,
-      rgba(0, 0, 0, 0.65) 0%,
-      rgba(0, 0, 0, 0.35) 35%,
-      rgba(0, 0, 0, 0) 75%
-    ),
-    url("mountain.png") center center / cover no-repeat;
 
-  color: white;
-  text-align: center;
-  padding: 115px 24px 125px;
-}
+    /* =========================
+       HERO
+    ========================= */
 
-    /* .hero {
-  background-image: url("hoidok_mountain_hero.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+    .hero {
+      background:
+        radial-gradient(
+          ellipse at center,
+          rgba(0, 0, 0, 0.65) 0%,
+          rgba(0, 0, 0, 0.35) 35%,
+          rgba(0, 0, 0, 0) 75%
+        ),
+        url("mountain.png") center center / cover no-repeat;
 
-  color: white;
-  text-align: center;
-  padding: 115px 24px 125px;
-} */
+      color: white;
+      text-align: center;
+      padding: 115px 24px 125px;
+    }
 
-    /* .hero h1 {
-      font-size: clamp(64px, 10vw, 110px);
+
+    /* HOIDOK */
+
+    .hero h1 {
+      font-size: clamp(72px, 11vw, 130px);
       font-weight: 900;
       letter-spacing: -4px;
-      margin: 0;
       line-height: 1.1;
-    } */
+      margin: 0;
 
-    /* HERO 글자 가독성 개선 */
+      text-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.85);
+    }
 
-.hero h1,
-.hero .english,
-.hero .message,
-.hero .highlight,
-.hero .description {
-  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.85);
-}
 
-.hero .english {
-  color: #ffffff;
-}
-
-.hero .highlight {
-  color: #ffffff;
-}
-
-.hero .description {
-  color: #ffffff;
-}
+    /* Learn. Repeat. Achieve. */
 
     .hero .english {
-      font-size: 22px;
-      letter-spacing: 2px;
+      font-size: 21px;
+      letter-spacing: 1.5px;
       color: #bbbbbb;
-      margin-top: 20px;
+      margin-top: 18px;
+
+      text-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.85);
     }
+
+
+    /* 회독 시리즈와 함께 */
 
     .hero .message {
-      margin-top: 65px;
-      font-size: 27px;
+      font-size: 25px;
       font-weight: 700;
+      margin-top: 60px;
+
+      text-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.85);
     }
 
+
+    /* 합격 가즈아! */
+
     .hero .highlight {
-      font-size: clamp(34px, 6vw, 55px);
+      font-size: clamp(32px, 4.5vw, 48px);
       font-weight: 900;
       color: var(--primary);
-      margin-top: 8px;
+      margin-top: 12px;
+
+      text-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.85);
     }
+
+
+    /* 설명 */
 
     .hero .description {
       color: #aaaaaa;
       font-size: 16px;
-      margin-top: 35px;
+      line-height: 1.9;
+      margin-top: 38px;
+
+      text-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.85);
     }
+
+
+    /* 메인 버튼 */
 
     .hero-button {
       display: inline-block;
       background: var(--primary);
       color: white;
+
       border-radius: 8px;
       padding: 13px 35px;
       margin-top: 35px;
+
       font-weight: 700;
       transition: 0.2s;
     }
@@ -183,10 +198,14 @@
       background: var(--primary-dark);
     }
 
-    /* COMMON SECTION */
+
+    /* =========================
+       COMMON SECTION
+    ========================= */
 
     section {
       padding: 100px 24px;
+      scroll-margin-top: 75px;
     }
 
     .container {
@@ -217,7 +236,10 @@
       margin: 0;
     }
 
-    /* APP GRID */
+
+    /* =========================
+       APP GRID
+    ========================= */
 
     .apps {
       display: grid;
@@ -229,24 +251,35 @@
       background: white;
       border: 1px solid var(--border);
       border-radius: 18px;
+
       padding: 35px 22px 30px;
       text-align: center;
+
       transition: 0.25s;
     }
 
     .app-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 14px 35px rgba(0,0,0,0.08);
+
+      box-shadow:
+        0 14px 35px rgba(0, 0, 0, 0.08);
     }
+
+
+    /* 앱 아이콘 */
 
     .app-icon {
       width: 150px;
       height: 150px;
+
       border-radius: 22%;
       object-fit: cover;
+
       display: block;
       margin: 0 auto 27px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
+      box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.1);
     }
 
     .app-card h3 {
@@ -262,6 +295,9 @@
       margin-bottom: 26px;
     }
 
+
+    /* 스토어 버튼 */
+
     .store-buttons {
       display: flex;
       flex-direction: column;
@@ -271,11 +307,14 @@
     .store-button {
       background: var(--black);
       color: white;
+
       display: block;
       border-radius: 8px;
+
       padding: 12px 10px;
       font-size: 14px;
       font-weight: 700;
+
       transition: 0.2s;
     }
 
@@ -283,7 +322,10 @@
       background: var(--primary-dark);
     }
 
-    /* ABOUT */
+
+    /* =========================
+       ABOUT
+    ========================= */
 
     .about {
       background: var(--light);
@@ -299,8 +341,10 @@
     .about p {
       font-size: 17px;
       color: #555;
+
       max-width: 650px;
       margin: auto;
+
       line-height: 2;
     }
 
@@ -312,12 +356,16 @@
       color: var(--primary-dark);
     }
 
-    /* FOOTER */
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       background: var(--black);
       color: white;
       padding: 55px 24px 30px;
+      scroll-margin-top: 75px;
     }
 
     .footer-inner {
@@ -340,6 +388,7 @@
       display: flex;
       gap: 25px;
       flex-wrap: wrap;
+
       margin-top: 30px;
       font-size: 14px;
       color: #cccccc;
@@ -351,19 +400,31 @@
 
     .copyright {
       border-top: 1px solid #333;
+
       margin-top: 45px;
       padding-top: 25px;
+
       color: #888;
       font-size: 12px;
     }
 
-    /* RESPONSIVE */
+
+    /* =========================
+       TABLET
+    ========================= */
 
     @media (max-width: 1000px) {
+
       .apps {
         grid-template-columns: repeat(2, 1fr);
       }
+
     }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 600px) {
 
@@ -380,16 +441,20 @@
         font-size: 12px;
       }
 
+
+      /* 모바일 메인 화면 */
+
       .hero {
         padding: 85px 20px 100px;
       }
 
       .hero h1 {
+        font-size: clamp(52px, 14vw, 72px);
         letter-spacing: -2px;
       }
 
       .hero .english {
-        font-size: 16px;
+        font-size: 15px;
       }
 
       .hero .message {
@@ -397,9 +462,16 @@
         margin-top: 45px;
       }
 
+      .hero .highlight {
+        font-size: clamp(28px, 8vw, 38px);
+      }
+
       .hero .description {
         font-size: 14px;
       }
+
+
+      /* 모바일 앱 카드 */
 
       section {
         padding: 70px 18px;
@@ -412,6 +484,7 @@
       .apps {
         grid-template-columns: 1fr;
         gap: 18px;
+
         max-width: 380px;
         margin: auto;
       }
@@ -425,6 +498,9 @@
         height: 140px;
       }
 
+
+      /* 모바일 회사 소개 */
+
       .about h2 {
         font-size: 30px;
       }
@@ -432,18 +508,27 @@
       .about p {
         font-size: 15px;
       }
+
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- HEADER -->
+
+  <!-- =========================
+       HEADER
+  ========================= -->
 
   <header>
+
     <div class="header-inner">
 
-      <a href="#" class="logo">HOIDOK</a>
+      <a href="#" class="logo">
+        HOIDOK
+      </a>
 
       <nav>
         <a href="#apps">앱 소개</a>
@@ -452,10 +537,14 @@
       </nav>
 
     </div>
+
   </header>
 
 
-  <!-- HERO -->
+
+  <!-- =========================
+       HERO
+  ========================= -->
 
   <div class="hero">
 
@@ -485,7 +574,10 @@
   </div>
 
 
-  <!-- APPS -->
+
+  <!-- =========================
+       APPS
+  ========================= -->
 
   <section id="apps">
 
@@ -493,7 +585,9 @@
 
       <div class="section-title">
 
-        <div class="label">OUR APPS</div>
+        <div class="label">
+          OUR APPS
+        </div>
 
         <h2>회독 시리즈</h2>
 
@@ -504,7 +598,9 @@
       </div>
 
 
+
       <div class="apps">
+
 
         <!-- JLPT -->
 
@@ -525,23 +621,28 @@
 
           <div class="store-buttons">
 
-            <a class="store-button"
-               href="https://apps.apple.com/kr/app/id1257680916"
-               target="_blank"
-               rel="noopener noreferrer">
+            <a
+              class="store-button"
+              href="https://apps.apple.com/kr/app/id1257680916"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
                App Store
             </a>
 
-            <a class="store-button"
-               href="https://play.google.com/store/apps/details?id=com.yongcalcompany.jlptkanji"
-               target="_blank"
-               rel="noopener noreferrer">
+            <a
+              class="store-button"
+              href="https://play.google.com/store/apps/details?id=com.yongcalcompany.jlptkanji"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Google Play
             </a>
 
           </div>
 
         </div>
+
 
 
         <!-- HSK -->
@@ -563,23 +664,28 @@
 
           <div class="store-buttons">
 
-            <a class="store-button"
-               href="https://apps.apple.com/kr/app/id1460388012"
-               target="_blank"
-               rel="noopener noreferrer">
+            <a
+              class="store-button"
+              href="https://apps.apple.com/kr/app/id1460388012"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
                App Store
             </a>
 
-            <a class="store-button"
-               href="https://play.google.com/store/apps/details?id=com.yongcalcompany.hskkanji"
-               target="_blank"
-               rel="noopener noreferrer">
+            <a
+              class="store-button"
+              href="https://play.google.com/store/apps/details?id=com.yongcalcompany.hskkanji"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Google Play
             </a>
 
           </div>
 
         </div>
+
 
 
         <!-- TOEIC -->
@@ -601,23 +707,28 @@
 
           <div class="store-buttons">
 
-            <a class="store-button"
-               href="https://apps.apple.com/kr/app/id1488921928"
-               target="_blank"
-               rel="noopener noreferrer">
+            <a
+              class="store-button"
+              href="https://apps.apple.com/kr/app/id1488921928"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
                App Store
             </a>
 
-            <a class="store-button"
-               href="https://play.google.com/store/apps/details?id=com.yongcalcompany.ToeicWords"
-               target="_blank"
-               rel="noopener noreferrer">
+            <a
+              class="store-button"
+              href="https://play.google.com/store/apps/details?id=com.yongcalcompany.ToeicWords"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Google Play
             </a>
 
           </div>
 
         </div>
+
 
 
         <!-- ROUTINE -->
@@ -639,23 +750,28 @@
 
           <div class="store-buttons">
 
-            <a class="store-button"
-               href="https://apps.apple.com/kr/app/id6790443629"
-               target="_blank"
-               rel="noopener noreferrer">
+            <a
+              class="store-button"
+              href="https://apps.apple.com/kr/app/id6790443629"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
                App Store
             </a>
 
-            <a class="store-button"
-               href="https://play.google.com/store/apps/details?id=com.yongcalcompany.hoidokroutine"
-               target="_blank"
-               rel="noopener noreferrer">
+            <a
+              class="store-button"
+              href="https://play.google.com/store/apps/details?id=com.yongcalcompany.hoidokroutine"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Google Play
             </a>
 
           </div>
 
         </div>
+
 
       </div>
 
@@ -664,28 +780,41 @@
   </section>
 
 
-  <!-- ABOUT -->
+
+  <!-- =========================
+       ABOUT
+  ========================= -->
 
   <section class="about" id="about">
 
     <div class="container">
 
       <div class="section-title">
-        <div class="label">ABOUT US</div>
+
+        <div class="label">
+          ABOUT US
+        </div>
+
         <h2>YONGCAL COMPANY</h2>
+
       </div>
+
 
       <p>
         용칼컴퍼니의 근간은 회독입니다.
         <br><br>
+
         더 효율적으로 배우고,
         더 꾸준히 학습할 수 있도록.
         <br>
+
         누구나 자신의 목표에 도달할 수 있도록.
         <br><br>
+
         YONGCAL COMPANY는
         학습을 위한 작지만 강력한 도구들을 만듭니다.
       </p>
+
 
       <div class="company">
         LEARN. REPEAT. ACHIEVE.
@@ -696,7 +825,10 @@
   </section>
 
 
-  <!-- FOOTER -->
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
   <footer id="footer">
 
@@ -711,17 +843,26 @@
       </div>
 
       <div class="footer-links">
-        <a href="#apps">회독 시리즈</a>
-        <a href="#about">회사 소개</a>
+
+        <a href="#apps">
+          회독 시리즈
+        </a>
+
+        <a href="#about">
+          회사 소개
+        </a>
+
       </div>
 
       <div class="copyright">
-        © 2026 YONGCAL COMPANY. All rights reserved.
+        © 2026 YONGCAL COMPANY.
+        All rights reserved.
       </div>
 
     </div>
 
   </footer>
+
 
 </body>
 </html>
